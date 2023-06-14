@@ -8,23 +8,26 @@
     <title>Trabalho RNA - Tela Autenticação</title>
     <link rel="icon" href=img/imperioGalatico.png>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="js/comunicaAPI.js" type="module"></script>
 </head>
 
 <body>
     
     <main class="Rectangle">
 
-        <div class="paraImagem">
+        <div class="paraImagem" id="webcam-container">
         </div>
 
         <div>
             <img class="Imagem" src= img/imperioGalatico.png alt= "Logo Death Star">
             <a class="StyleDeathStar">DEATH STAR</a>
             <a class="StylePlataform">PLATAFORM</a>
-            <button class="bottomAutenticar">Autenticar</button>
+            <button class="bottomAutenticar" id="bottomAutenticar">Autenticar</button>
         </div>
     </main>
-
+    
+ 
 </body>
-
 </html>

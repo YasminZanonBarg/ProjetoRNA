@@ -1,4 +1,9 @@
-let objetoAutorizacao =[];
+let objetoAutorizacao ={
+    "users":[{
+        "nome":"",
+        "pontuacao":0
+    }]
+}
 
 // the link to your model provided by Teachable Machine export panel
 const URL = "https://teachablemachine.withgoogle.com/models/NiFoiKT-E/";
@@ -15,22 +20,20 @@ async function init() {
 
     // Função para iniciar a webcam e cofiguração
     const flip = true;
-    webcam = new tmImage.Webcam(400, 400, flip); // width, height, position
+    webcam = new tmImage.Webcam(400, 350, flip); // width, height, position
     await webcam.setup(); // Solicita acesso a webcam
     await webcam.play();
-    window.requestAnimationFrame(loop)
+    window.requestAnimationFrame(loop);
+    let btnValidar = document.getElementById('bottomAutenticar');
+    btnValidar.addEventListener('click',validaAcesso);
 
     // Manipula o DOM adicionado o conteiner da WebCAm
     document.getElementById("webcam-container").appendChild(webcam.canvas);
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
-    }
 }
 
 async function loop() {
     webcam.update(); // update the webcam frame
-    window.requestAnimationFrame(loop)
+    window.requestAnimationFrame(loop);
 }
 
 // run the webcam image through the image model
@@ -38,14 +41,16 @@ async function validaAcesso() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas)
     montaObjeto(prediction);
-
+    console.log(objetoAutorizacao.users.values)
 }
 function montaObjeto(prediction) {
     for (let i = 0; i < maxPredictions; i++) {
-        objetoAutorizacao += {
-            nome: prediction[i].className,
-            pontuacao: prediction[i].probability.toFixed(2)
+        objetoAutorizacao.users += {
+            "nome": prediction[i].className,
+            "pontuacao": prediction[i].probability.toFixed(2)
         };
     }
+    
 }
+
 init()
