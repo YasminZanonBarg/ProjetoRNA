@@ -1,13 +1,7 @@
-let nome
-async function direcionaNotas(){
-    window.location.assign('notas.html')
-}
-function getNameNote(){
-    return nome
-}
-function setNameNote(user){
-    nome = user
-}
+const nameNotas = document.getElementById('nome_notas')
+async function inicializaNota(user){
+    nameNotas.value= user
+} 
 // // Obtém os elementos do bloco de notas e do botão de salvar
 // var editor = document.getElementById('editor');
 // var saveButton = document.getElementById('save-btn');
@@ -27,10 +21,3 @@ function setNameNote(user){
 //     localStorage.setItem('notepadContent', editor.value);
 //     alert('Conteúdo salvo!');
 // });
-
-export const direcionamento = {
-    direcionaNotas,
-    getNameNote,
-    setNameNote,
-
-}
