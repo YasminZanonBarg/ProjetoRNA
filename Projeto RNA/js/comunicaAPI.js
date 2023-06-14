@@ -1,13 +1,9 @@
-let objetoAutorizacao ={
-    "users":[{
-        "nome":"",
-        "pontuacao":0
-    }]
-}
+import { direcionamento } from "./script.js";
 
 // the link to your model provided by Teachable Machine export panel
 const URL = "https://teachablemachine.withgoogle.com/models/NiFoiKT-E/";
 let model, webcam, labelContainer, maxPredictions;
+let user;
 
 // Inicia a WebCam usando a API model e metadata da Google
 async function init() {
@@ -40,17 +36,30 @@ async function loop() {
 async function validaAcesso() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas)
-    montaObjeto(prediction);
-    console.log(objetoAutorizacao.users.values)
-}
-function montaObjeto(prediction) {
-    for (let i = 0; i < maxPredictions; i++) {
-        objetoAutorizacao.users += {
-            "nome": prediction[i].className,
-            "pontuacao": prediction[i].probability.toFixed(2)
-        };
+    direcionamento.setNameNote(montaObjeto(prediction));
+    user = direcionamento.getNameNote()
+    if (user != 'NA'){
+        direcionamento.direcionaNotas(user)
+    }else{
+        window.alert('NA')
     }
     
 }
+function montaObjeto(prediction) {
+    var maiorPontuacao = 0
+    var userAutorizado = ''
+    for (let i = 0; i < maxPredictions; i++) {
+        if(prediction[i].probability.toFixed(2) > maiorPontuacao){
+            maiorPontuacao = prediction[i].probability.toFixed(2)
+            userAutorizado = prediction[i].className
+        }
+    }
 
+    if(maiorPontuacao <= 0.80){
+        return 'NA'
+    }else{
+        return userAutorizado
+    }
+    
+}
 init()
