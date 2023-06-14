@@ -1,24 +1,217 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    background: #FFC233;
+  }
+
+
+  .Rectangle {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #F8F2F2;
+    box-shadow: 15px 15px 30px 15px rgba(0, 0, 0, 0.19);
+    border-radius: 25px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+
+/*Estilos utilizados: index.html*/
+
+.Imagem {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 66%;
+    top: 15%
 }
 
-h1 {
-    text-align: center;
+.StyleDeathStar {
+    position: fixed;
+    width: 350px;
+    height: 100px;
+    left: 55%;
+    top: 40%;
+    
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 40px;
+    line-height: normal;
+    
+    letter-spacing: 0.20em;
+    
+    color: #000000;
+    
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
-textarea {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    resize: vertical;
+.StylePlataform {
+    position: fixed;
+    width: 350px;
+    height: 100px;
+    left: 58.5%;
+    top: 51%;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: normal;
+    
+    letter-spacing: 0.3em;
+    
+    color: rgba(14, 13, 13, 0.52);
+    
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.bottomAutenticar {
+    box-sizing: border-box;
+
+    position: fixed;
+    width: 335px;
+    height: 50px;
+    left: 55%;
+    top: 71%;
+    
+    background: rgba(0, 0, 0, 0.83);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    
+
+    color: #F8F2F2;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.paraImagem {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    left: 28%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #EDEDED;
+}
+
+
+/*Estilos utilizados: notes.html*/
+
+.ImagemLogo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 8%;
+    top: 10%;
+}
+
+.StyleDeathStarLogo {
+    position: fixed;
+    width: 350px;
+    height: 100px;
+    left: 15%;
+    top: 12.5%;
+    
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: normal;
+    
+    letter-spacing: 0.20em;
+    
+    color: #000000;
+    
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+.ImagemSeta {
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    left: 9%;
+    top: 30%;
+}
+
+
+.StylesLetter {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    left: 12%;
+    top: 30%;
+    
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 20px;
+    line-height: normal;
+    
+    color: #000000;
+}
+
+
+.bottomAutenticar {
+    box-sizing: border-box;
+
+    position: fixed;
+    width: 250px;
+    height: 45px;
+    left: 8%;
+    top: 67%;
+    
+    background: rgba(0, 0, 0, 0.83);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    
+
+    color: #F8F2F2;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.StylesSair {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    left: 18.5%;
+    top: 80%;
+    
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    
+    color: #000000;
+}
+
+.nota {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    left: 73%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #EDEDED;
 }
