@@ -14,20 +14,17 @@
     
     <main class="Rectangle">
 
+        <img class="ImagemLogo" src= img/imperioGalatico.png alt= "Logo Death Star">
+        <a class="StyleDeathStarLogo">DEATH STAR</a>
+        <img class="ImagemSeta" src= img/seta.png alt= "Seta">
+        <a class="StylesLetter" id="nome_nota">Notes</a>
+        <button class="bottomAutenticar" id="save-btn">Salvar</button>
+        <button class="StylesSair" onclick="window.location.assign('index.html')">Sair</button>
         <div>
-            <img class="ImagemLogo" src= img/imperioGalatico.png alt= "Logo Death Star">
-            <a class="StyleDeathStarLogo">DEATH STAR</a>
-            <img class="ImagemSeta" src= img/seta.png alt= "Seta">
-            <a class="StylesLetter"> Yasmin's Notes</a>
-            <button class="bottomAutenticar">Salvar</button>
-            <a class="StylesSair">Sair</a>
-        </div>
-
-        <div>
-            <textarea class="nota"></textarea>
+        <textarea class="nota" id="editor"></textarea>
         </div>
     </main>
-
+    <script src="js/notas.js" type="module"></script>
 </body>
 
 </html>

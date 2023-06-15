@@ -1,9 +1,9 @@
-import { direcionamento } from "./script.js";
-
+import { script } from "./script.js";
 // the link to your model provided by Teachable Machine export panel
 const URL = "https://teachablemachine.withgoogle.com/models/NiFoiKT-E/";
 let model, webcam, labelContainer, maxPredictions;
 let user;
+let content = document.getElementById('middle-container')
 
 // Inicia a WebCam usando a API model e metadata da Google
 async function init() {
@@ -36,14 +36,12 @@ async function loop() {
 async function validaAcesso() {
     // predict can take in an image, video or canvas html element
     const prediction = await model.predict(webcam.canvas)
-    direcionamento.setNameNote(montaObjeto(prediction));
-    user = direcionamento.getNameNote()
+    user = montaObjeto(prediction)
     if (user != 'NA'){
-        direcionamento.direcionaNotas(user)
+        script.redireciona(user);
     }else{
         window.alert('NA')
     }
-    
 }
 function montaObjeto(prediction) {
     var maiorPontuacao = 0

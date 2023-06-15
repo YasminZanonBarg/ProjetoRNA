@@ -117,7 +117,7 @@
     width: 50px;
     height: 50px;
     left: 8%;
-    top: 10%;
+    top: 15%;
 }
 
 .StyleDeathStarLogo {
@@ -125,7 +125,7 @@
     width: 350px;
     height: 100px;
     left: 15%;
-    top: 12.5%;
+    top: 18.5%;
     
     font-family: 'Roboto';
     font-weight: 600;
@@ -171,8 +171,8 @@
     position: fixed;
     width: 250px;
     height: 45px;
-    left: 58%;
-    top: 67%;
+    left: 60%;
+    top: 88%;
     
     background: rgba(0, 0, 0, 0.83);
     border: 1px solid #000000;
@@ -193,16 +193,23 @@
 .StylesSair {
     position: absolute;
     width: 150px;
-    height: 20px;
+    height: 45px;
     left: 18.5%;
-    top: 80%;
+    top: 88%;
     
+    background: rgba(0, 0, 0, 0.83);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    
+
+    color: #F8F2F2;
     font-family: 'Roboto';
-    font-weight: 500;
+    font-style: normal;
+    font-weight: 400;
     font-size: 20px;
-    line-height: normal;
-    
-    color: #000000;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nota {
